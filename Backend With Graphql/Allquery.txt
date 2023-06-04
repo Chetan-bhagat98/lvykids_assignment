@@ -1,0 +1,122 @@
+All Query and Mutation 
+
+
+
+*********All USer***********
+query{
+  users{
+    author
+    image
+    caption
+    id
+  }
+}
+
+*********POSTBYPAGINATION***********
+query {
+  postbypagination(
+     pageNo:1,
+    limit:3
+  
+  ){
+    id
+    postby
+    Images
+    caption
+    comments
+    data
+  }
+}
+***********POSTUSER*********
+
+query{
+  userbyID(id:"647af65273c0e6c6e754769c"){
+    author
+    image
+    caption
+    id
+  }
+}
+
+***********Post Instagram POST*********
+mutation{
+  createUser(post:{
+     author:"robert"
+     caption:"writer"
+     image:"url"
+     email:"roberts@gmail.com"
+     password:"robert"
+  }){
+    id
+     author,
+   image,
+   email,
+   password
+  }
+  
+ 
+}
+
+***********GET POST BY ID*********
+ mutation{
+  createPost(post:{
+     postby:"647af65273c0e6c6e754769c"
+     Images:["img1","img2","img3"]
+     caption:"Fort Diaries" 
+     comments:["com1","com2","com3"]
+  }){
+    id
+    postby
+    Images
+    caption
+    comments
+    data
+  }
+  
+ 
+}
+***********updateCaption  BY ID*********
+mutation{
+  updateCaption(
+     id:"647c407e977c8d8c1869ad13"
+    caption:"New comment added in graphql"
+  
+  )
+
+}
+***********deletePost  BY ID*********
+mutation{
+  deletePost(
+     id:"647c407e977c8d8c1869ad13"
+ 
+  
+  )
+
+}
+***********addComment  BY ID*********
+mutation{
+  addComment(
+     id:"647c407e977c8d8c1869ad13"
+    comment:"New comment added in graphql"
+  
+  )
+
+}
+***********likePost  BY ID*********
+mutation{
+  likePost(
+     id:"647c407e977c8d8c1869ad13"
+  
+  
+  )
+
+}
+***********unlikePost  BY ID*********
+mutation{
+  unlikePost(
+     id:"647c407e977c8d8c1869ad13"
+
+  
+  )
+
+}
